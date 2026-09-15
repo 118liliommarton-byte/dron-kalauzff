@@ -1,0 +1,741 @@
+package com.example.data
+
+object DroneRulesAmericas {
+    val countries = listOf(
+        CountryRule(
+            name = "Egyesült Államok (USA)",
+            flag = "🇺🇸",
+            maxAltitude = "122 m",
+            registrationRequired = true,
+            registrationDetail = "FAA DroneZone / TRUST vizsga és Remote ID kötelező.",
+            summary = "Minden 250g feletti drónra kötelező az FAA regisztráció és a Remote ID műsorszórás. Nemzeti parkokban tilos a repülés.",
+            detailedRules = listOf(
+                "Kötelező az FAA TRUST (The Recreational UAS Safety Test) vizsga letétele hobbipilótáknak is.",
+                "250g felett FAA regisztrációs szám és Remote ID elektronikus azonosító szükséges.",
+                "Az összes US National Park (pl. Grand Canyon, Yellowstone, Yosemite) felett szigorúan tilos drónozni.",
+                "A maximális megengedett magasság 122 méter (400 láb).",
+                "A B4UFLY vagy FAA Aloft alkalmazással ellenőrizni kell az ellenőrzött légtereket (LAANC jóváhagyás)."
+            ),
+            lat = 37.0902,
+            lng = -95.7129,
+            mapZoom = 4,
+            officialMapName = "FAA DroneZone (USA)",
+            officialMapUrl = "https://faadronezone-access.faa.gov",
+            restrictedZonesSummary = "Washington D.C. Special Flight Rules Area (SFRA), Nemzeti Parkok (NPS), katonai támaszpontok, repülőterek 8 km-es körzete."
+        ),
+        CountryRule(
+            name = "Kanada",
+            flag = "🇨🇦",
+            maxAltitude = "122 m",
+            registrationRequired = true,
+            registrationDetail = "Transport Canada Drone Management Portal és NAV Drone app.",
+            summary = "Szigorú szabályok a nemzeti parkokban (Parks Canada) és 5,6 km-es védőtávolság a repülőterektől.",
+            detailedRules = listOf(
+                "250g feletti drónokhoz Basic vagy Advanced Pilot Certificate vizsga kötelező a Transport Canadánál.",
+                "A Parks Canada nemzeti parkjaiban (Banff, Jasper) a vadon védelmében tilos a drónozás külön engedély nélkül.",
+                "A megengedett maximális repülési magasság 122 méter (400 láb).",
+                "Legalább 5,6 km (3 tengeri mérföld) távolságot kell tartani a repülőterektől.",
+                "A NAV Drone hivatalos kanadai légtér-alkalmazás ellenőrzése kötelező."
+            ),
+            lat = 56.1304,
+            lng = -106.3468,
+            mapZoom = 4,
+            officialMapName = "NAV Drone (Transport Canada)",
+            officialMapUrl = "https://tc.canada.ca/en/aviation/drone-safety",
+            restrictedZonesSummary = "Banff és Jasper Nemzeti Parkok, Toronto Pearson (YYZ), Vancouver (YVR), Ottawa parlament körzete."
+        ),
+        CountryRule(
+            name = "Mexikó",
+            flag = "🇲🇽",
+            maxAltitude = "122 m",
+            registrationRequired = true,
+            registrationDetail = "AFAC (Agencia Federal de Aviación Civil) regisztráció.",
+            summary = "Külföldi állampolgárok számára a 250g feletti drónok használata korlátozott. Maja romok és régészeti helyszínek szigorúan védettek.",
+            detailedRules = listOf(
+                "Külföldi turisták mexikói regisztráció nélkül csak 250g alatti mikródrónt reptethetnek rekreációs célra.",
+                "Az INAH által felügyelt összes régészeti lelőhelyen (Chichén Itzá, Tulum, Teotihuacán, Palenque) szigorúan tilos a repülés.",
+                "A maximális megengedett magasság 122 méter (400 láb).",
+                "Tilos emberek felett és strandokon a tömeg közvetlen közelében repülni.",
+                "Legalább 9,2 km (5 tengeri mérföld) távolságot kell tartani minden repülőtértől."
+            ),
+            lat = 23.6345,
+            lng = -102.5528,
+            mapZoom = 5,
+            officialMapName = "AFAC Drones México",
+            officialMapUrl = "https://www.gob.mx/afac",
+            restrictedZonesSummary = "Chichén Itzá, Tulum, Cancun repülőtér (CUN), Mexikóváros Benito Juárez (MEX), katonai zónák."
+        ),
+        CountryRule(
+            name = "Kuba",
+            flag = "🇨🇺",
+            maxAltitude = "0 m",
+            registrationRequired = true,
+            registrationDetail = "IACC (Instituto de Aeronáutica Civil de Cuba) szigorú beviteli engedély.",
+            summary = "🚨 Szigorú tilalom! A vámon a drónokat lefoglalják és távozásig raktározzák, vagy elkobozzák.",
+            detailedRules = listOf(
+                "Kubába drónt bevinni az IACC előzetes írásos engedélye nélkül szigorúan tilos.",
+                "A határon a vámtisztek átvilágítják a poggyászt és lefoglalják a bejelentés nélküli drónokat.",
+                "Havanna belvárosa, a Forradalom tere és Varadero felett a repülés nemzetbiztonsági kockázatnak minősül.",
+                "Kizárólag állami filmes stábok kaphatnak eseti minisztériumi jóváhagyást.",
+                "Turistáknak semmilyen körülmények között nem ajánlott drónt magukkal vinni Kubába."
+            ),
+            lat = 21.5218,
+            lng = -77.7812,
+            mapZoom = 6,
+            officialMapName = "Aduana de Cuba (Vámhatóság)",
+            officialMapUrl = "https://www.aduana.gob.cu",
+            restrictedZonesSummary = "Kuba teljes területe magánszemélyek és külföldiek számára zárt légtér."
+        ),
+        CountryRule(
+            name = "Brazília",
+            flag = "🇧🇷",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "ANAC SISANT regisztráció és DECEA SARPAS repülési engedélyezés.",
+            summary = "Fejlett légtér-ellenőrzés. A SARPAS rendszerben minden felszállást katonai jóváhagyásra kell benyújtani.",
+            detailedRules = listOf(
+                "Minden 250g feletti drónt regisztrálni kell az ANAC SISANT rendszerében.",
+                "A repülés előtt a DECEA SARPAS légtérellenőrző katonai felületén repülési tervet kell leadni.",
+                "A megengedett maximális repülési magasság 120 méter (400 láb).",
+                "A Megváltó Krisztus szobor (Corcovado), a Cukorsüveg-hegy és az Iguazu-vízesés felett szigorú zónák vannak.",
+                "Kötelező a RETA felelősségbiztosítás megléte."
+            ),
+            lat = -14.235,
+            lng = -51.9253,
+            mapZoom = 4,
+            officialMapName = "DECEA SARPAS Brasil",
+            officialMapUrl = "https://servicos.decea.mil.br/sarpas",
+            restrictedZonesSummary = "Rio de Janeiro Galeão (GIG) és Santos Dumont (SDU), São Paulo (GRU), Iguazu Nemzeti Park, Corcovado."
+        ),
+        CountryRule(
+            name = "Argentína",
+            flag = "🇦🇷",
+            maxAltitude = "122 m",
+            registrationRequired = true,
+            registrationDetail = "ANAC (Administración Nacional de Aviación Civil) regisztráció.",
+            summary = "Patagónia gleccserei és az Iguazu-vízesés felett nemzeti parki engedély kötelező.",
+            detailedRules = listOf(
+                "Minden drónt regisztrálni kell az ANAC online rendszerében.",
+                "A maximális repülési magasság 122 méter (400 láb).",
+                "A Los Glaciares Nemzeti Parkban (Perito Moreno) és az Iguazu argentin oldalán tilos a repülés külön APN engedély nélkül.",
+                "Buenos Aires belvárosa és az Ezeiza (EZE) / Aeroparque (AEP) repülőterek CTR-je szigorúan védett.",
+                "Mindig kötelező a felelősségbiztosítás igazolása."
+            ),
+            lat = -38.4161,
+            lng = -63.6167,
+            mapZoom = 4,
+            officialMapName = "ANAC Drones Argentina",
+            officialMapUrl = "https://www.argentina.gob.ar/anac/drones",
+            restrictedZonesSummary = "Buenos Aires (EZE/AEP), Iguazu Nemzeti Park, Perito Moreno gleccser, Ushuaia kikötő."
+        ),
+        CountryRule(
+            name = "Chile",
+            flag = "🇨🇱",
+            maxAltitude = "130 m",
+            registrationRequired = true,
+            registrationDetail = "DGAC Chile regisztráció.",
+            summary = "Az Atacama-sivatag és Torres del Paine lenyűgöző, de a CONAF természetvédelmi területein tilos a drónozás.",
+            detailedRules = listOf(
+                "Minden drónt be kell jelenteni a DGAC hatóságnál a DAN 91 és DAN 151 szabályok szerint.",
+                "A CONAF által felügyelt nemzeti parkokban (Torres del Paine, Rapa Nui / Húsvét-sziget) tilos repülni a vadon élővilágának védelmében.",
+                "A maximális magasság 130 méter a felszín felett.",
+                "Santiago de Chile és a nemzetközi repülőtér (SCL) felett szigorú zónák vannak.",
+                "A Húsvét-szigeten a Moai szobrok felett teljes körű repülési tilalom van érvényben."
+            ),
+            lat = -35.6751,
+            lng = -71.543,
+            mapZoom = 4,
+            officialMapName = "DGAC Chile Drones",
+            officialMapUrl = "https://www.dgac.gob.cl",
+            restrictedZonesSummary = "Santiago (SCL) CTR, Torres del Paine Nemzeti Park, Húsvét-sziget Moai lelőhelyek."
+        ),
+        CountryRule(
+            name = "Kolumbia",
+            flag = "🇨🇴",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "Aerocivil (UAEAC) RAC 100 regisztráció.",
+            summary = "Cartagena gyarmati erődjei és a kávérégió csodásak, de a katonai és drogellenes biztonsági zónák kiemeltek.",
+            detailedRules = listOf(
+                "A 250g feletti drónokat regisztrálni kell az Aerocivil online adatbázisában.",
+                "A maximális repülési magasság 120 méter (400 láb).",
+                "Bogotá (BOG), Medellín (MDE) és Cartagena (CTG) repülőterek 9 km-es körzetében tilos repülni.",
+                "A Tayrona Nemzeti Parkban az őslakosok szent helyei miatt tilos a drónozás.",
+                "Tilos katonai és rendőrségi épületek, börtönök és kormányzati paloták közelében repülni."
+            ),
+            lat = 4.5709,
+            lng = -74.2973,
+            mapZoom = 6,
+            officialMapName = "Aerocivil RAC 100 Colombia",
+            officialMapUrl = "https://www.aerocivil.gov.co",
+            restrictedZonesSummary = "Bogotá El Dorado (BOG), Tayrona Nemzeti Park, San Andrés sziget CTR."
+        ),
+        CountryRule(
+            name = "Peru",
+            flag = "🇵🇪",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "DGAC MTC regisztráció és vámáru-bevallás szükséges.",
+            summary = "🚨 Machu Picchu, a Nazca-vonalak és Cusco történelmi központja felett szigorúan TILOS repülni!",
+            detailedRules = listOf(
+                "A drónt a repülőtéren a vámhatóságnál (SUNAT) be kell jelenteni, ahol kauciót kérhetnek.",
+                "Machu Picchu, a Szent Völgy, Ollantaytambo és a Nazca-vonalak felett bűncselekmény drónozni.",
+                "A régészeti lelőhelyeken a helyszíni őrök azonnal elkobozzák az eszközt és átadják a rendőrségnek.",
+                "A megengedett maximális magasság 120 méter a nyílt, nem védett területeken.",
+                "Cusco belvárosa és Lima repülőtere (LIM) teljes tilalmi zóna."
+            ),
+            lat = -9.19,
+            lng = -75.0152,
+            mapZoom = 5,
+            officialMapName = "DGAC Peru Aeronáutica Civil",
+            officialMapUrl = "https://www.gob.pe/mtc",
+            restrictedZonesSummary = "Machu Picchu Régészeti Park, Nazca-vonalak, Cusco (CUZ), Lima Jorge Chávez (LIM)."
+        ),
+        CountryRule(
+            name = "Ecuador",
+            flag = "🇪🇨",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "DGAC Ecuador regisztráció kötelező.",
+            summary = "🚨 A Galápagos-szigeteken teljes és abszolút repülési tilalom van érvényben az egyedülálló állatvilág védelmében!",
+            detailedRules = listOf(
+                "A Galápagos Nemzeti Parkban szigorúan tilos minden magán és turisztikai drónhasználat.",
+                "Az Andok és az Amazonas területén a maximális magasság 120 méter.",
+                "Minden drónt regisztrálni kell a DGAC adatbázisában.",
+                "Quito (UIO) és Guayaquil (GYE) repülőterek 9 km-es körzetében tilos repülni.",
+                "Vulkáni területeken (Cotopaxi) ügyeljen az erős le- és felszálló légáramlatokra."
+            ),
+            lat = -1.8312,
+            lng = -78.1834,
+            mapZoom = 6,
+            officialMapName = "Dirección General de Aviación Civil Ecuador",
+            officialMapUrl = "https://www.aviacioncivil.gob.ec",
+            restrictedZonesSummary = "Galápagos-szigetek teljes területe (No-Fly), Quito (UIO) és Guayaquil (GYE) CTR."
+        ),
+        CountryRule(
+            name = "Bolívia",
+            flag = "🇧🇴",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "DGAC Bolivia engedély szükséges.",
+            summary = "A Salar de Uyuni sómező a világ egyik legszebb drónos helyszíne, de a ritka hegyi levegő miatt csökken a felhajtóerő!",
+            detailedRules = listOf(
+                "Nagy tengerszint feletti magasságban (Uyuni: 3650m, La Paz: 4000m) a drón akkumulátorai és rotorjai sokkal gyorsabban merülnek.",
+                "Minden repülést a DGAC előírásai szerint kell végezni, max. 120 méter magasságig.",
+                "La Paz El Alto repülőtér (LPB) és a kormányzati elnöki palota felett tilos a repülés.",
+                "Nemzeti parkokban (Madidi, Eduardo Avaroa) helyi természetvédelmi engedély szükséges.",
+                "Tilos katonai és bányászati telepek felett felvételeket készíteni."
+            ),
+            lat = -16.2902,
+            lng = -63.5887,
+            mapZoom = 5,
+            officialMapName = "DGAC Bolivia",
+            officialMapUrl = "https://www.dgac.gob.bo",
+            restrictedZonesSummary = "La Paz El Alto (LPB), Salar de Uyuni katonai zónák, Madidi Nemzeti Park."
+        ),
+        CountryRule(
+            name = "Uruguay",
+            flag = "🇺🇾",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "DINACIA regisztráció szükséges.",
+            summary = "Punta del Este és Montevideo tengerpartjai népszerűek, de a tömegek feletti repülés tilos.",
+            detailedRules = listOf(
+                "A 250g feletti drónokat a DINACIA nyilvántartásába kell regisztrálni.",
+                "A maximális megengedett magasság 120 méter.",
+                "Montevideo Carrasco repülőtér (MVD) és Laguna del Sauce repülőtér (PDP) zónájában tilos repülni.",
+                "Strandok és rendezvények felett biztonsági távolságot (legalább 30 méter) kell tartani.",
+                "Kötelező a felelősségbiztosítás."
+            ),
+            lat = -32.5228,
+            lng = -55.7658,
+            mapZoom = 6,
+            officialMapName = "DINACIA Uruguay",
+            officialMapUrl = "https://www.dinacia.gub.uy",
+            restrictedZonesSummary = "Montevideo (MVD) CTR, Punta del Este (PDP), kikötői zónák."
+        ),
+        CountryRule(
+            name = "Paraguay",
+            flag = "🇵🇾",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "DINAC Paraguay regisztráció.",
+            summary = "Itaipú gát és a Chaco vadonja kiemelt övezetek, a vízerőmű felett szigorú tilalom van.",
+            detailedRules = listOf(
+                "A drónokat regisztrálni kell a DINAC portálján.",
+                "A maximális magasság 120 méter a talajszinttől.",
+                "Az Itaipú vízerőmű és transzformátorállomások felett szigorúan tilos a repülés.",
+                "Asunción Silvio Pettirossi repülőtér (ASU) 8 km-es körzete zárt légtér.",
+                "Tilos a nemzetközi határfolyók (Paraná, Paraguay) felett engedély nélkül átlépni."
+            ),
+            lat = -23.4425,
+            lng = -58.4438,
+            mapZoom = 6,
+            officialMapName = "DINAC Paraguay",
+            officialMapUrl = "http://www.dinac.gov.py",
+            restrictedZonesSummary = "Asunción (ASU) CTR, Itaipú vízerőmű, határőrizeti zónák."
+        ),
+        CountryRule(
+            name = "Venezuela",
+            flag = "🇻🇪",
+            maxAltitude = "0 m",
+            registrationRequired = true,
+            registrationDetail = "INAC engedély, turistáknak szigorúan tilos és veszélyes.",
+            summary = "🚨 Rendkívül szigorú katonai felügyelet. Drónozásért kémkedés vádjával börtönbüntetés járhat!",
+            detailedRules = listOf(
+                "Venezuelába drónt bevinni és használni szigorúan tilos a belbiztonsági törvények miatt.",
+                "Caracas repülőterén (CCS) a hatóságok a drónokat lefoglalják és a turistákat kihallgatják.",
+                "Az Angel-vízesés (Canaima Nemzeti Park) felett is tilos a magánrepülés.",
+                "Olajfinomítók, katonai támaszpontok és állami épületek közelében életveszélyes a drónozás.",
+                "Turistáknak kifejezetten tilos a drón birtoklása az országban."
+            ),
+            lat = 6.4238,
+            lng = -66.5897,
+            mapZoom = 5,
+            officialMapName = "INAC Venezuela (Zárt légtér)",
+            officialMapUrl = "http://www.inac.gob.ve",
+            restrictedZonesSummary = "Caracas Maiquetía (CCS), Canaima Nemzeti Park, PDVSA olajterminálok."
+        ),
+        CountryRule(
+            name = "Guyana",
+            flag = "🇬🇾",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "GCAA (Guyana Civil Aviation Authority) engedély.",
+            summary = "A Kaieteur-vízesés és az esőerdők csodásak, a repülésekhez a GCAA engedélye kötelező.",
+            detailedRules = listOf(
+                "Minden drónt regisztrálni kell a GCAA hatóságnál a beutazás előtt.",
+                "A Kaieteur Nemzeti Parkban külön parkfelügyeleti engedély szükséges.",
+                "Georgetown Cheddi Jagan repülőtér (GEO) és Ogle (OGL) 5 km-es körzetében tilos repülni.",
+                "A maximális megengedett magasság 120 méter.",
+                "Bányászati és határőrizeti területek felett tilos a légtérhasználat."
+            ),
+            lat = 4.8604,
+            lng = -58.9302,
+            mapZoom = 6,
+            officialMapName = "Guyana Civil Aviation Authority",
+            officialMapUrl = "https://www.gcaa-gy.org",
+            restrictedZonesSummary = "Georgetown (GEO/OGL) CTR, Kaieteur Nemzeti Park, venezuelai határsáv."
+        ),
+        CountryRule(
+            name = "Suriname",
+            flag = "🇸🇷",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "CASAS (Civil Aviation Safety Authority Suriname) regisztráció.",
+            summary = "Paramaribo faházai és az amazóniai esőerdők természetvédelmi területei.",
+            detailedRules = listOf(
+                "A CASAS előírásai szerint minden drónt be kell jelenteni.",
+                "A megengedett maximális magasság 120 méter.",
+                "Paramaribo Johan Adolf Pengel repülőtér (PBM) és Zorg en Hoop (ORG) felett tilos a repülés.",
+                "Közép-Suriname Természetvédelmi Rezervátumban kutatási engedély nélkül tilos drónozni.",
+                "A folyami hajózási útvonalakon a minimális távolságtartás kötelező."
+            ),
+            lat = 3.9193,
+            lng = -56.0278,
+            mapZoom = 6,
+            officialMapName = "CASAS Suriname",
+            officialMapUrl = "https://www.casas.sr",
+            restrictedZonesSummary = "Paramaribo (PBM/ORG) CTR, Közép-Suriname Természetvédelmi Terület."
+        ),
+        CountryRule(
+            name = "Panama",
+            flag = "🇵🇦",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "AAC Panama regisztráció kötelező.",
+            summary = "A Panama-csatorna felett szigorú nemzetközi tilalmi zóna érvényes a hajózás biztonsága miatt.",
+            detailedRules = listOf(
+                "A Panama-csatorna zsilipjei és a hajózási útvonal felett tilos a drónozás.",
+                "Minden drónt regisztrálni kell az AAC rendszerében.",
+                "A megengedett maximális repülési magasság 120 méter.",
+                "Panamaváros Tocumen (PTY) és Albrook (PAC) repülőterek zónái védettek.",
+                "San Blas szigeteken a Guna Yala őslakos kongresszus külön hozzájárulása szükséges."
+            ),
+            lat = 8.5379,
+            lng = -80.7821,
+            mapZoom = 7,
+            officialMapName = "AAC Panama Drones",
+            officialMapUrl = "https://www.aeronautica.gob.pa",
+            restrictedZonesSummary = "Panama-csatorna teljes vízi útja, Tocumen (PTY) CTR, San Blas rezervátum."
+        ),
+        CountryRule(
+            name = "Costa Rica",
+            flag = "🇨🇷",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "DGAC Costa Rica regisztráció és SINAC engedély.",
+            summary = "A trópusi esőerdők és vulkánok (Arenal, Manuel Antonio) a SINAC nemzeti parki szabályai alá tartoznak.",
+            detailedRules = listOf(
+                "A SINAC kezelésében lévő összes nemzeti parkban és biológiai rezervátumban tilos a drónozás az élővilág védelmében.",
+                "A nyílt területeken és tengerpartokon a maximális magasság 120 méter.",
+                "Minden drónt regisztrálni kell a DGAC hatóságnál.",
+                "San José Juan Santamaría repülőtér (SJO) és Liberia (LIR) 8 km-es körzete zárt.",
+                "Tilos szörfösök és strandolók felett alacsonyan manőverezni."
+            ),
+            lat = 9.7489,
+            lng = -83.7534,
+            mapZoom = 7,
+            officialMapName = "DGAC Costa Rica",
+            officialMapUrl = "https://www.dgac.go.cr",
+            restrictedZonesSummary = "Manuel Antonio és Tortuguero Nemzeti Parkok, Arenal vulkán, San José (SJO) CTR."
+        ),
+        CountryRule(
+            name = "Guatemala",
+            flag = "🇬🇹",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "DGAC Guatemala regisztráció.",
+            summary = "Tikal maja piramisai, Atitlán-tó és Antigua történelmi romjai szigorú műemlékvédelem alatt állnak.",
+            detailedRules = listOf(
+                "A Tikal Nemzeti Parkban a maja templomok felett repülési tilalom van.",
+                "Antigua Guatemala koloniális belvárosában csak előzetes önkormányzati engedéllyel lehet repülni.",
+                "A maximális magasság 120 méter.",
+                "Guatemalaváros La Aurora repülőtere (GUA) felett tilos a repülés.",
+                "Vulkántúrákon (Fuego, Acatenango) ügyeljen a hirtelen kitörésekre és forró gázfelhőkre."
+            ),
+            lat = 15.7835,
+            lng = -90.2308,
+            mapZoom = 7,
+            officialMapName = "DGAC Guatemala",
+            officialMapUrl = "https://www.dgac.gob.gt",
+            restrictedZonesSummary = "Tikal Maja Park, Guatemalaváros (GUA) CTR, Antigua történelmi zóna."
+        ),
+        CountryRule(
+            name = "Honduras",
+            flag = "🇭🇳",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "AHAC (Agencia Hondureña de Aeronáutica Civil) regisztráció.",
+            summary = "Roatán karibi korallszigete és Copán maja romjai szigorú biztonsági szabályokhoz kötöttek.",
+            detailedRules = listOf(
+                "Minden drónt regisztrálni kell az AHAC nyilvántartásában.",
+                "Copán maja régészeti parkban a műemlékvédelem tiltja az engedély nélküli berepülést.",
+                "Roatán Juan Manuel Gálvez repülőtér (RTB) és Tegucigalpa (XPL) zónái zártak.",
+                "A maximális magasság 120 méter.",
+                "Tengerparti korallzátonyok felett a búvárok és hajók biztonságára ügyelni kell."
+            ),
+            lat = 15.2,
+            lng = -86.2419,
+            mapZoom = 7,
+            officialMapName = "AHAC Honduras",
+            officialMapUrl = "https://www.ahac.gob.hn",
+            restrictedZonesSummary = "Roatán (RTB) CTR, Copán Ruinas, Palmerola (XPL) nemzetközi repülőtér."
+        ),
+        CountryRule(
+            name = "Salvador",
+            flag = "🇸🇻",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "AAC El Salvador regisztráció.",
+            summary = "Vulkánok, szörfparadicsomok (El Tunco) és San Salvador nagyvárosi területe.",
+            detailedRules = listOf(
+                "A drónokat az AAC rendszerében regisztrálni kell a reptetés előtt.",
+                "A maximális megengedett magasság 120 méter.",
+                "San Salvador Monseñor Romero repülőtér (SAL) és Ilopango (MSSS) körzetében tilos repülni.",
+                "Börtönök, katonai létesítmények és elnöki hivatal felett repülési tilalom van.",
+                "A Csendes-óceáni szörfpartokon a fürdőzők feletti közvetlen repülés tilos."
+            ),
+            lat = 13.7942,
+            lng = -88.8965,
+            mapZoom = 8,
+            officialMapName = "AAC El Salvador",
+            officialMapUrl = "https://www.aac.gob.sv",
+            restrictedZonesSummary = "San Salvador (SAL/MSSS) CTR, El Boquerón vulkán, katonai bázisok."
+        ),
+        CountryRule(
+            name = "Nicaragua",
+            flag = "🇳🇮",
+            maxAltitude = "0 m",
+            registrationRequired = true,
+            registrationDetail = "INAC tilalom. Magánszemélyeknek szigorúan tilos a drónozás.",
+            summary = "🚨 TELJES TILALOM! A határon a drónokat azonnal lefoglalják és pénzbírságot szabnak ki.",
+            detailedRules = listOf(
+                "Nicaraguába drónt bevinni és reptetni törvényileg szigorúan tilos a polgári személyeknek.",
+                "Managua repülőterén a vámosok minden csomagot átvilágítanak és elkobozzák a drónokat.",
+                "Ometepe-sziget, Granada és San Juan del Sur felett is abszolút tilalom érvényes.",
+                "Kizárólag a kormány által kifejezetten jóváhagyott állami felmérések engedélyezettek.",
+                "Turistáknak semmilyen körülmények között nem ajánlott drónt magukkal vinni."
+            ),
+            lat = 12.8654,
+            lng = -85.2072,
+            mapZoom = 7,
+            officialMapName = "INAC Nicaragua (Zárt légtér)",
+            officialMapUrl = "https://www.inac.gob.ni",
+            restrictedZonesSummary = "Nicaragua teljes területe polgári drónok számára zárt."
+        ),
+        CountryRule(
+            name = "Belize",
+            flag = "🇧🇿",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "BDCA (Belize Department of Civil Aviation) engedély.",
+            summary = "A Nagy Kék Lyuk (Great Blue Hole) és Caye Caulker türkiz vizei csodásak, de BDCA engedély szükséges.",
+            detailedRules = listOf(
+                "Minden látogatónak előzetes engedélyt kell kérnie a Belize Department of Civil Aviation-től.",
+                "A Belize Barrier Reef és a Great Blue Hole felett tilos a tengeri élővilág zavarása.",
+                "Philip Goldson repülőtér (BZE) és San Pedro (SPR) 5 km-es körzetében tilos repülni.",
+                "A megengedett legnagyobb magasság 120 méter (400 láb).",
+                "Maja templomok (Caracol, Xunantunich) felett a régészeti előírások érvényesek."
+            ),
+            lat = 17.1899,
+            lng = -88.4976,
+            mapZoom = 8,
+            officialMapName = "Belize Civil Aviation",
+            officialMapUrl = "https://www.civilaviation.gov.bz",
+            restrictedZonesSummary = "Belize City (BZE), San Pedro Ambergris Caye (SPR), Great Blue Hole tengeri rezervátum."
+        ),
+        CountryRule(
+            name = "Dominikai Köztársaság",
+            flag = "🇩🇴",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "IDAC (Instituto Dominicano de Aviación Civil) regisztráció kötelező.",
+            summary = "Punta Cana és Bayahibe csodás pálmafás partjai, de a resortok magánszférája szigorúan védett.",
+            detailedRules = listOf(
+                "Minden turistának be kell jelentenie a drónt az IDAC online rendszerében a beutazás előtt.",
+                "A maximális megengedett magasság 120 méter (400 láb).",
+                "Punta Cana (PUJ) és Santo Domingo (SDQ) repülőterek 8 km-es körzetében tilos repülni.",
+                "A szállodák privát strandjai és medencéi felett tilos a vendégek felé kamerázni.",
+                "A Saona-sziget Nemzeti Parkban fokozott természetvédelmi előírások érvényesek."
+            ),
+            lat = 18.7357,
+            lng = -70.1627,
+            mapZoom = 7,
+            officialMapName = "IDAC República Dominicana",
+            officialMapUrl = "https://www.idac.gob.do",
+            restrictedZonesSummary = "Punta Cana (PUJ) és Las Américas (SDQ) CTR, Saona-sziget, Santo Domingo kormányzati zóna."
+        ),
+        CountryRule(
+            name = "Bahama-szigetek",
+            flag = "🇧🇸",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "BCAA (Bahamas Civil Aviation Authority) regisztráció és vámengedély.",
+            summary = "Exuma malac-strandja és a türkizkék korallzátonyok népszerűek, de a repülőterek és hidroplánok sűrűek.",
+            detailedRules = listOf(
+                "Minden drónt kötelező regisztrálni a BCAA hivatalos honlapján.",
+                "A maximális repülési magasság 120 méter (400 láb).",
+                "Nassau Lynden Pindling (NAS) repülőtér és a körutazó hajók kikötője felett tilos repülni.",
+                "Tilos magánszigetek (pl. magántulajdonú cay-k) és luxusvillák felett repülni engedély nélkül.",
+                "Tengeri állatok (cápák, delfinek, ráják) közvetlen zaklatása tilos."
+            ),
+            lat = 25.0343,
+            lng = -77.3963,
+            mapZoom = 6,
+            officialMapName = "Bahamas Civil Aviation Authority",
+            officialMapUrl = "https://www.bcaa.gov.bs",
+            restrictedZonesSummary = "Nassau (NAS) CTR, Freeport (FPO), Paradise Island magánlégtér."
+        ),
+        CountryRule(
+            name = "Jamaica",
+            flag = "🇯🇲",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "JCAA (Jamaica Civil Aviation Authority) engedély.",
+            summary = "Montego Bay, Negril sziklái és Ocho Rios vízesései, szigorúan ügyelve a repülőterekre.",
+            detailedRules = listOf(
+                "Minden drónreptetéshez előzetes JCAA jóváhagyás szükséges.",
+                "A megengedett legnagyobb magasság 120 méter.",
+                "Montego Bay Sangster (MBJ) és Kingston Norman Manley (KIN) repülőterek 5 km-es körzetében tilos repülni.",
+                "Tilos all-inclusive szállodakomplexumok felett repülni a vendégek nyugalma miatt.",
+                "A Blue Mountains hegyvidékén a látótávolságban (VLOS) maradás kötelező."
+            ),
+            lat = 18.1096,
+            lng = -77.2975,
+            mapZoom = 8,
+            officialMapName = "Jamaica Civil Aviation Authority",
+            officialMapUrl = "https://www.jcaa.gov.jm",
+            restrictedZonesSummary = "Montego Bay (MBJ), Kingston (KIN), Dunn's River Falls turistaterület."
+        ),
+        CountryRule(
+            name = "Haiti",
+            flag = "🇭🇹",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "OFNAC engedély.",
+            summary = "A politikai és közbiztonsági helyzet miatt a drónozás fokozott kockázatot jelent.",
+            detailedRules = listOf(
+                "Az OFNAC előírásai alapján a drónhasználat hatósági engedélyhez kötött.",
+                "Port-au-Prince Toussaint Louverture repülőtér (PAP) és a kormányzati negyed felett tilos repülni.",
+                "A Labadee körutazó kikötőben a magán biztonsági előírások érvényesek.",
+                "A maximális megengedett magasság 120 méter.",
+                "Fokozott óvatosság ajánlott a helyi közbiztonsági állapotok miatt."
+            ),
+            lat = 18.9712,
+            lng = -72.2852,
+            mapZoom = 7,
+            officialMapName = "OFNAC Haiti",
+            officialMapUrl = "http://www.ofnac.gouv.ht",
+            restrictedZonesSummary = "Port-au-Prince (PAP) CTR, Nemzeti Palota körzete, Cap-Haïtien (CAP)."
+        ),
+        CountryRule(
+            name = "Trinidad és Tobago",
+            flag = "🇹🇹",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "TTCAA regisztráció.",
+            summary = "Port of Spain, Pigeon Point és a védett madárrezervátumok (Caroni Swamp).",
+            detailedRules = listOf(
+                "Minden drónt regisztrálni kell a TTCAA rendszerében.",
+                "A maximális magasság 120 méter a talajszinttől.",
+                "Piarco repülőtér (POS) és Tobago Crown Point (TAB) 5 km-es körzetében tilos repülni.",
+                "A Caroni madárrezervátumban (vörös íbiszek védelme) szigorúan tilos a drónozás.",
+                "Olajfinomítók és földgázterminálok (Point Lisas) felett a légtér zárt."
+            ),
+            lat = 10.6918,
+            lng = -61.2225,
+            mapZoom = 8,
+            officialMapName = "TTCAA Trinidad and Tobago",
+            officialMapUrl = "https://caa.gov.tt",
+            restrictedZonesSummary = "Piarco (POS) CTR, ANR Robinson Tobago (TAB), Point Lisas ipari kikötő."
+        ),
+        CountryRule(
+            name = "Barbados",
+            flag = "🇧🇧",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "BCAD (Barbados Civil Aviation Department) engedély.",
+            summary = "Bridgetown, Carlisle Bay teknősei és a nyugati part luxusvillái.",
+            detailedRules = listOf(
+                "Minden drónhoz a BCAD előzetes engedélye és vámjóváhagyása kötelező.",
+                "Grantley Adams Nemzetközi Repülőtér (BGI) 5 km-es körzetében tilos repülni.",
+                "A maximális megengedett magasság 120 méter.",
+                "Tilos a tengerparti fürdőzők és villák felett magánszférát sértő felvételeket készíteni.",
+                "A felelősségbiztosítás igazolása ajánlott."
+            ),
+            lat = 13.1939,
+            lng = -59.5432,
+            mapZoom = 10,
+            officialMapName = "BCAD Barbados",
+            officialMapUrl = "https://www.barbados.gov.bb",
+            restrictedZonesSummary = "Grantley Adams Nemzetközi Repülőtér (BGI) CTR, Bridgetown kikötő."
+        ),
+        CountryRule(
+            name = "Saint Lucia",
+            flag = "🇱🇨",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "DCA Saint Lucia regisztráció.",
+            summary = "A Pitonok (Gros Piton, Petit Piton) ikonikus vulkáni csúcsai és Soufrière öble.",
+            detailedRules = listOf(
+                "A Pitonok UNESCO Világörökségi Területen a hegymászók és vadvilág feletti repülés korlátozott.",
+                "Hewanorra (UVF) és George F. L. Charles (SLU) repülőterek körül szigorú zárt zónák vannak.",
+                "A maximális magasság 120 méter.",
+                "A tengerparti resortok és kikötők felett a szállodák engedélye szükséges.",
+                "A drónt a DCA-nál regisztrálni kell."
+            ),
+            lat = 13.9094,
+            lng = -60.9789,
+            mapZoom = 10,
+            officialMapName = "Saint Lucia Civil Aviation",
+            officialMapUrl = "https://www.govt.lc",
+            restrictedZonesSummary = "Hewanorra (UVF) CTR, Castries (SLU), Pitons Management Area."
+        ),
+        CountryRule(
+            name = "Grenada",
+            flag = "🇬🇩",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "Grenada Airports Authority / RGPF rendőrségi engedély.",
+            summary = "A Fűszer-sziget: Grand Anse Beach és a víz alatti szoborpark (Underwater Sculpture Park).",
+            detailedRules = listOf(
+                "Minden repüléshez a rendőrség és a repülőtéri hatóság jóváhagyása szükséges.",
+                "Maurice Bishop Nemzetközi Repülőtér (GND) 5 km-es körzetében tilos repülni.",
+                "A víz alatti szoborparknál a búvárok és csónakok biztonságára ügyelni kell.",
+                "A megengedett legnagyobb magasság 120 méter.",
+                "Tilos magánszállodák és strandok felett közvetlenül manőverezni."
+            ),
+            lat = 12.1165,
+            lng = -61.679,
+            mapZoom = 10,
+            officialMapName = "Grenada Civil Aviation",
+            officialMapUrl = "https://www.gov.gd",
+            restrictedZonesSummary = "Maurice Bishop repülőtér (GND) CTR, St. George's kikötő, Underwater Sculpture Park."
+        ),
+        CountryRule(
+            name = "Antigua és Barbuda",
+            flag = "🇦🇬",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "ABCAA / ECCAA regisztráció.",
+            summary = "365 fehér homokos strand és Nelson's Dockyard történelmi hadikikötője.",
+            detailedRules = listOf(
+                "A drónokat az ABCAA előírásai szerint regisztrálni kell.",
+                "V. C. Bird Nemzetközi Repülőtér (ANU) körzetében szigorú tilalom van érvényben.",
+                "Nelson's Dockyard Nemzeti Parkban a történelmi műemlékek védelme érvényesül.",
+                "A megengedett maximális magasság 120 méter (400 láb).",
+                "A Barbuda-szigeti fregattmadár-rezervátum felett tilos a drónozás."
+            ),
+            lat = 17.0608,
+            lng = -61.7964,
+            mapZoom = 10,
+            officialMapName = "ECCAA Antigua and Barbuda",
+            officialMapUrl = "https://www.eccaa.aero",
+            restrictedZonesSummary = "V.C. Bird repülőtér (ANU) CTR, Nelson's Dockyard, Barbuda madárrezervátum."
+        ),
+        CountryRule(
+            name = "Saint Kitts és Nevis",
+            flag = "🇰🇳",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "ECCAA és helyi rendőrségi engedély.",
+            summary = "Brimstone Hill erődítmény és a karibi tengerparti sáv.",
+            detailedRules = listOf(
+                "Robert L. Bradshaw repülőtér (SKB) és Vance W. Amory (NEV) körzetében tilos repülni.",
+                "Brimstone Hill Fortress UNESCO erőd felett külön engedély szükséges.",
+                "A maximális megengedett magasság 120 méter.",
+                "Tilos luxusszállodák és strandolók felett alacsonyan repülni.",
+                "A drónt a beutazás előtt be kell jelenteni."
+            ),
+            lat = 17.3578,
+            lng = -62.783,
+            mapZoom = 10,
+            officialMapName = "ECCAA Saint Kitts and Nevis",
+            officialMapUrl = "https://www.eccaa.aero",
+            restrictedZonesSummary = "Robert L. Bradshaw repülőtér (SKB) CTR, Brimstone Hill Fortress."
+        ),
+        CountryRule(
+            name = "Dominikai Közösség",
+            flag = "🇩🇲",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "Dominica Civil Aviation engedély.",
+            summary = "A Karib-térség természet-szigete: Boiling Lake, Morne Trois Pitons és vízesések.",
+            detailedRules = listOf(
+                "A Morne Trois Pitons Nemzeti Parkban az érintetlen esőerdők élővilága védett.",
+                "Douglas-Charles repülőtér (DOM) és Canefield (DCF) 5 km-es körzetében tilos a repülés.",
+                "A maximális megengedett magasság 120 méter.",
+                "Tilos a Kalinago őslakos területen a közösség hozzájárulása nélkül repülni.",
+                "A hegyvidéki szél- és felhőviszonyokra fokozottan ügyelni kell."
+            ),
+            lat = 15.415,
+            lng = -61.371,
+            mapZoom = 10,
+            officialMapName = "Dominica Civil Aviation",
+            officialMapUrl = "https://dominica.gov.dm",
+            restrictedZonesSummary = "Douglas-Charles repülőtér (DOM), Morne Trois Pitons Nemzeti Park, Kalinago Territory."
+        ),
+        CountryRule(
+            name = "Saint Vincent és a Grenadine-szigetek",
+            flag = "🇻🇨",
+            maxAltitude = "120 m",
+            registrationRequired = true,
+            registrationDetail = "ECCAA és SVG Air Transport engedély.",
+            summary = "Tobago Cays tengeri rezervátum, Mustique privát sziget és La Soufrière vulkán.",
+            detailedRules = listOf(
+                "Mustique magánszigete felett a hírességek védelme miatt szigorú repülési tilalom van.",
+                "A Tobago Cays Marine Parkban a teknősök és tengeri élővilág zavarása tilos.",
+                "Argyle Nemzetközi Repülőtér (SVD) körzete zárt légtér.",
+                "A maximális magasság 120 méter.",
+                "La Soufrière aktív vulkáni kráterénél a hirtelen gázkitörések veszélyt jelentenek."
+            ),
+            lat = 13.2528,
+            lng = -61.1971,
+            mapZoom = 10,
+            officialMapName = "ECCAA Saint Vincent",
+            officialMapUrl = "https://www.eccaa.aero",
+            restrictedZonesSummary = "Argyle repülőtér (SVD) CTR, Mustique Island, Tobago Cays Marine Park."
+        )
+    )
+}

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Left Top Arm -->
+    <path
+        android:pathData="M54,54 L34,34"
+        android:strokeColor="#06B6D4"
+        android:strokeWidth="5"
+        android:strokeLineCap="round" />
+    
+    <!-- Right Top Arm -->
+    <path
+        android:pathData="M54,54 L74,34"
+        android:strokeColor="#06B6D4"
+        android:strokeWidth="5"
+        android:strokeLineCap="round" />
+        
+    <!-- Left Bottom Arm -->
+    <path
+        android:pathData="M54,54 L34,74"
+        android:strokeColor="#06B6D4"
+        android:strokeWidth="5"
+        android:strokeLineCap="round" />
+        
+    <!-- Right Bottom Arm -->
+    <path
+        android:pathData="M54,54 L74,74"
+        android:strokeColor="#06B6D4"
+        android:strokeWidth="5"
+        android:strokeLineCap="round" />
+
+    <!-- Propeller Discs -->
+    <path
+        android:pathData="M34,34 m-10,0 a10,10 0 1,1 20,0 a10,10 0 1,1 -20,0"
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="2.5" />
+    <path
+        android:pathData="M74,34 m-10,0 a10,10 0 1,1 20,0 a10,10 0 1,1 -20,0"
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="2.5" />
+    <path
+        android:pathData="M34,74 m-10,0 a10,10 0 1,1 20,0 a10,10 0 1,1 -20,0"
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="2.5" />
+    <path
+        android:pathData="M74,74 m-10,0 a10,10 0 1,1 20,0 a10,10 0 1,1 -20,0"
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="2.5" />
+
+    <!-- Drone Body Core -->
+    <path
+        android:pathData="M54,54 m-11,0 a11,11 0 1,1 22,0 a11,11 0 1,1 -22,0"
+        android:fillColor="#1E293B"
+        android:strokeColor="#06B6D4"
+        android:strokeWidth="3" />
+
+    <!-- Camera / Lens Ring -->
+    <path
+        android:pathData="M54,54 m-5,0 a5,5 0 1,1 10,0 a5,5 0 1,1 -10,0"
+        android:fillColor="#F8FAFC" />
+        
+</vector>

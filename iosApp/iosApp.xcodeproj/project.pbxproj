@@ -1,0 +1,199 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000012B00000100000001 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000012B00000100000001 /* App.swift */; };
+		A10000022B00000100000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000022B00000100000001 /* ContentView.swift */; };
+		A10000032B00000100000001 /* GoldenHourNotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000032B00000100000001 /* GoldenHourNotificationHandler.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B10000012B00000100000001 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		B10000022B00000100000001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B10000032B00000100000001 /* GoldenHourNotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenHourNotificationHandler.swift; sourceTree = "<group>"; };
+		B10000042B00000100000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C10000012B00000100000001 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D10000012B00000100000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E10000012B00000100000001 = {
+			isa = PBXGroup;
+			children = (
+				E10000022B00000100000001 /* iosApp */,
+				E10000032B00000100000001 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E10000022B00000100000001 /* iosApp */ = {
+			isa = PBXGroup;
+			children = (
+				B10000012B00000100000001 /* App.swift */,
+				B10000022B00000100000001 /* ContentView.swift */,
+				B10000032B00000100000001 /* GoldenHourNotificationHandler.swift */,
+				B10000042B00000100000001 /* Info.plist */,
+			);
+			path = iosApp;
+			sourceTree = "<group>";
+		};
+		E10000032B00000100000001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C10000012B00000100000001 /* iosApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F10000012B00000100000001 /* iosApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = G10000012B00000100000001 /* Build configuration list for PBXNativeTarget "iosApp" */;
+			buildPhases = (
+				H10000012B00000100000001 /* Sources */,
+				D10000012B00000100000001 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iosApp;
+			productName = iosApp;
+			productReference = C10000012B00000100000001 /* iosApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		I10000012B00000100000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					F10000012B00000100000001 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+				};
+			};
+			buildConfigurationList = J10000012B00000100000001 /* Build configuration list for PBXProject "Project object" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E10000012B00000100000001;
+			productRefGroup = E10000032B00000100000001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F10000012B00000100000001 /* iosApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		H10000012B00000100000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000012B00000100000001 /* App.swift in Sources */,
+				A10000022B00000100000001 /* ContentView.swift in Sources */,
+				A10000032B00000100000001 /* GoldenHourNotificationHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		K10000012B00000100000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = iosApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dron.kalauz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		K10000022B00000100000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = iosApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dron.kalauz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		L10000012B00000100000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		L10000022B00000100000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		G10000012B00000100000001 /* Build configuration list for PBXNativeTarget "iosApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				K10000012B00000100000001 /* Debug */,
+				K10000022B00000100000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		J10000012B00000100000001 /* Build configuration list for PBXProject "Project object" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				L10000012B00000100000001 /* Debug */,
+				L10000022B00000100000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = I10000012B00000100000001 /* Project object */;
+}
