@@ -192,8 +192,7 @@ struct ContentView: View {
                         HStack(spacing: 4) {
                             Text(activeTheme.iconEmoji)
                             Text("Téma")
-                                .font(.caption)
-                                .fontWeight(.bold)
+                                .font(.caption.bold())
                         }
                         .padding(.horizontal, 10)
                         .padding(.vertical, 6)
@@ -428,8 +427,7 @@ struct WeatherView: View {
                         Spacer()
                         Button(action: { showWindyMap.toggle() }) {
                             Text(showWindyMap ? "Bezárás" : "Interaktív Megnyitása")
-                                .font(.caption2)
-                                .fontWeight(.bold)
+                                .font(.caption2.bold())
                                 .padding(.horizontal, 8)
                                 .padding(.vertical, 4)
                                 .background(theme.primaryColor.opacity(0.2))
@@ -449,8 +447,7 @@ struct WeatherView: View {
                                 .foregroundColor(theme.primaryColor)
                             VStack(alignment: .leading, spacing: 4) {
                                 Text("Dinamikus Globális ECMWF Szélmodell")
-                                    .font(.subheadline)
-                                    .fontWeight(.bold)
+                                    .font(.subheadline.bold())
                                 Text("Kattints a fenti gombra az élő interaktív széltérkép betöltéséhez.")
                                     .font(.caption)
                                     .foregroundColor(theme.isDark ? .gray : .black.opacity(0.6))
@@ -563,8 +560,7 @@ struct RegulationsView: View {
                                 .font(.caption2)
                                 .foregroundColor(theme.isDark ? .gray : .black.opacity(0.6))
                             Text(categoryForWeight(droneWeightGrams))
-                                .font(.caption)
-                                .fontWeight(.bold)
+                                .font(.caption.bold())
                                 .padding(.horizontal, 8)
                                 .padding(.vertical, 3)
                                 .background(theme.primaryColor.opacity(0.2))
@@ -638,12 +634,10 @@ struct RegulationCard: View {
                 Image(systemName: icon)
                     .foregroundColor(theme.primaryColor)
                 Text(title)
-                    .font(.subheadline)
-                    .fontWeight(.bold)
+                    .font(.subheadline.bold())
                 Spacer()
                 Text(badge)
-                    .font(.caption2)
-                    .fontWeight(.bold)
+                    .font(.caption2.bold())
                     .padding(.horizontal, 6)
                     .padding(.vertical, 2)
                     .background(theme.primaryColor.opacity(0.15))
@@ -702,8 +696,7 @@ struct SpotterView: View {
                                 .font(.title)
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(spot.name)
-                                    .font(.subheadline)
-                                    .fontWeight(.bold)
+                                    .font(.subheadline.bold())
                                     .foregroundColor(theme.isDark ? .white : .black)
                                 Text(spot.region)
                                     .font(.caption)
@@ -711,8 +704,7 @@ struct SpotterView: View {
                             }
                             Spacer()
                             Text(spot.category)
-                                .font(.caption2)
-                                .fontWeight(.bold)
+                                .font(.caption2.bold())
                                 .padding(.horizontal, 8)
                                 .padding(.vertical, 4)
                                 .background(theme.primaryColor.opacity(0.15))
@@ -792,8 +784,7 @@ struct MarketplaceView: View {
                     VStack(alignment: .leading, spacing: 10) {
                         HStack {
                             Text(item.title)
-                                .font(.subheadline)
-                                .fontWeight(.bold)
+                                .font(.subheadline.bold())
                                 .foregroundColor(theme.isDark ? .white : .black)
                             Spacer()
                             Text("\(item.priceHuf) Ft")
@@ -819,8 +810,7 @@ struct MarketplaceView: View {
                                 Image(systemName: "person.fill")
                                 Text("\(item.sellerName) (\(item.contactPhone))")
                             }
-                            .font(.caption2)
-                            .fontWeight(.bold)
+                            .font(.caption2.bold())
                             .foregroundColor(theme.primaryColor)
                         }
                     }
@@ -873,18 +863,15 @@ struct ExamAndInsuranceView: View {
                     VStack(alignment: .leading, spacing: 14) {
                         HStack {
                             Text("Kérdés \(currentQuestionIndex + 1) / \(questions.count)")
-                                .font(.caption)
-                                .fontWeight(.bold)
+                                .font(.caption.bold())
                                 .foregroundColor(theme.primaryColor)
                             Spacer()
                             Text("Pontszám: \(score)")
-                                .font(.caption)
-                                .fontWeight(.bold)
+                                .font(.caption.bold())
                         }
                         
                         Text(q.question)
-                            .font(.subheadline)
-                            .fontWeight(.bold)
+                            .font(.subheadline.bold())
                             .foregroundColor(theme.isDark ? .white : .black)
                         
                         VStack(spacing: 8) {
@@ -898,7 +885,6 @@ struct ExamAndInsuranceView: View {
                                     HStack {
                                         Text("\(idx + 1). \(q.options[idx])")
                                             .font(.caption)
-                                            .fontWeight(.medium)
                                         Spacer()
                                         if selectedOptionIndex == idx {
                                             Image(systemName: idx == q.correctIndex ? "checkmark.circle.fill" : "xmark.circle.fill")
@@ -921,8 +907,7 @@ struct ExamAndInsuranceView: View {
                         if selectedOptionIndex != nil {
                             VStack(alignment: .leading, spacing: 4) {
                                 Text("💡 Magyarázat:")
-                                    .font(.caption2)
-                                    .fontWeight(.bold)
+                                    .font(.caption2.bold())
                                     .foregroundColor(theme.primaryColor)
                                 Text(q.explanation)
                                     .font(.caption2)
@@ -937,8 +922,7 @@ struct ExamAndInsuranceView: View {
                                 currentQuestionIndex += 1
                             }) {
                                 Text("Következő Kérdés ➔")
-                                    .font(.caption)
-                                    .fontWeight(.bold)
+                                    .font(.caption.bold())
                                     .frame(maxWidth: .infinity)
                                     .padding(.vertical, 10)
                                     .background(theme.primaryColor)
@@ -959,8 +943,7 @@ struct ExamAndInsuranceView: View {
                             .foregroundColor(theme.primaryColor)
                         
                         Text("Elért eredményed: \(score) / \(questions.count) pont (\(Int(Double(score)/Double(questions.count)*100))%)")
-                            .font(.subheadline)
-                            .fontWeight(.bold)
+                            .font(.subheadline.bold())
                         
                         Button(action: {
                             currentQuestionIndex = 0
@@ -968,8 +951,7 @@ struct ExamAndInsuranceView: View {
                             selectedOptionIndex = nil
                         }) {
                             Text("Teszt Újraindítása")
-                                .font(.caption)
-                                .fontWeight(.bold)
+                                .font(.caption.bold())
                                 .padding(.horizontal, 20)
                                 .padding(.vertical, 10)
                                 .background(theme.primaryColor)
@@ -1011,8 +993,7 @@ struct PilotProfileView: View {
                             .font(.system(size: 36))
                         VStack(alignment: .leading, spacing: 2) {
                             Text(pilotName)
-                                .font(.subheadline)
-                                .fontWeight(.bold)
+                                .font(.subheadline.bold())
                             Text("A1/A3 & A2 Minősített Drónpilóta")
                                 .font(.caption)
                                 .foregroundColor(theme.primaryColor)
@@ -1057,8 +1038,7 @@ struct PilotProfileView: View {
                         HStack {
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(drone.modelName)
-                                    .font(.subheadline)
-                                    .fontWeight(.bold)
+                                    .font(.subheadline.bold())
                                 Text("S/N: \(drone.serialNumber) • \(drone.weightGrams)g")
                                     .font(.caption2)
                                     .foregroundColor(theme.isDark ? .gray : .black.opacity(0.6))
@@ -1066,8 +1046,7 @@ struct PilotProfileView: View {
                             Spacer()
                             VStack(alignment: .trailing, spacing: 2) {
                                 Text("\(drone.batteryCycles) akku ciklus")
-                                    .font(.caption2)
-                                    .fontWeight(.bold)
+                                    .font(.caption2.bold())
                                     .foregroundColor(theme.primaryColor)
                                 Text("Utolsó: \(drone.lastFlightDate)")
                                     .font(.system(size: 9))
@@ -1108,8 +1087,7 @@ struct ChatView: View {
                             VStack(alignment: .leading, spacing: 4) {
                                 HStack(spacing: 6) {
                                     Text(msg.sender)
-                                        .font(.caption)
-                                        .fontWeight(.bold)
+                                        .font(.caption.bold())
                                         .foregroundColor(theme.primaryColor)
                                     if msg.isPilotPro {
                                         Text("PRO")
@@ -1203,8 +1181,7 @@ struct ThemePickerSheet: View {
                                         .font(.title2)
                                     VStack(alignment: .leading, spacing: 2) {
                                         Text(theme.displayName)
-                                            .font(.subheadline)
-                                            .fontWeight(.bold)
+                                            .font(.subheadline.bold())
                                             .foregroundColor(theme.isDark ? .white : .black)
                                         Text("Sarok: \(Int(theme.cornerRadius))pt")
                                             .font(.caption2)
