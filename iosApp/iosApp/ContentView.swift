@@ -1,4 +1,5 @@
 import SwiftUI
+import Foundation
 import WebKit
 import UserNotifications
 
@@ -795,7 +796,7 @@ struct MarketplaceView: View {
                                 .fontWeight(.bold)
                                 .foregroundColor(theme.isDark ? .white : .black)
                             Spacer()
-                            Text("\(item.priceHuf.formatted()) Ft")
+                            Text("\(item.priceHuf) Ft")
                                 .font(.system(size: 15, weight: .black, design: .monospaced))
                                 .foregroundColor(theme.primaryColor)
                         }

@@ -28,13 +28,28 @@ struct GoldenHourNotificationHandler {
         }
     }
 
+    static func scheduleSunsetWarningNotification(sunsetTimeString: String) {
+        let content = UNMutableNotificationContent()
+        content.title = "🌅 Polgári Szürkület Riasztás (\(sunsetTimeString))"
+        content.body = "Még 15 perc van hátra a látás szerinti repülési időből (19:42)! Készülj fel a biztonságos leszállásra."
+        content.sound = UNNotificationSound.default
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let request = UNNotificationRequest(identifier: "sunset_warning_\(sunsetTimeString)", content: content, trigger: trigger)
+
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Failed to schedule sunset warning: \(error)")
+            }
+        }
+    }
+
     static func scheduleGoldenHourNotification(title: String, body: String) {
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = body
         content.sound = UNNotificationSound.default
 
-        // Schedule notification for 20:00 local time
         var dateComponents = DateComponents()
         dateComponents.hour = 20
         dateComponents.minute = 0
